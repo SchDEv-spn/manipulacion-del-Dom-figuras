@@ -75,6 +75,17 @@ function moverIzquierda() {
         figure.style.transform = `translateX(${posX}px)`;
     });
 }
+function moverDerecha() {
+    const figure = document.getElementById("figure");
+    const btnRight = document.getElementById("btnMoveRight");
+
+    let posX = 0;
+
+    btnRight.addEventListener("click", () => {
+        posX += 20; 
+        figure.style.transform = `translateX(${posX}px)`;
+    });
+}
 
 
 
@@ -85,3 +96,4 @@ document.addEventListener("DOMContentLoaded", animacion);
 document.addEventListener("DOMContentLoaded", moverArriba);
 document.addEventListener("DOMContentLoaded", moverAbajo);
 document.addEventListener("DOMContentLoaded", moverIzquierda);
+document.addEventListener("DOMContentLoaded", moverDerecha);
