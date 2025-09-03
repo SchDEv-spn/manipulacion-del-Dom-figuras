@@ -30,7 +30,18 @@ function gif() {
         figure.style.backgroundSize = "cover";
     });
 }
+function animacion() {
+    const figure = document.getElementById("figure");
+    const btnAnim = document.getElementById("btnAnim");
 
+    btnAnim.addEventListener("click", () => {
+        if (figure.style.transform === "rotate(360deg)") {
+            figure.style.transform = "rotate(0deg)";
+        } else {
+            figure.style.transform = "rotate(360deg)";
+        }
+    });
+}
 
 
 
@@ -40,3 +51,4 @@ function gif() {
 document.addEventListener("DOMContentLoaded", circulo);
 document.addEventListener("DOMContentLoaded", estrella);
 document.addEventListener("DOMContentLoaded", gif);
+document.addEventListener("DOMContentLoaded", animacion);
