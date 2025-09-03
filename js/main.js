@@ -57,10 +57,10 @@ function moverAbajo() {
     const figure = document.getElementById("figure");
     const btnDown = document.getElementById("btnMoveDown");
 
-    let posY = 0; // posición inicial
+    let posY = 0; 
 
     btnDown.addEventListener("click", () => {
-        posY += 20; // bajar 20px
+        posY += 20; 
         figure.style.transform = `translateY(${posY}px)`;
     });
 }
@@ -86,7 +86,14 @@ function moverDerecha() {
         figure.style.transform = `translateX(${posX}px)`;
     });
 }
+function cambiarTitulo() {
+    const title = document.getElementById("mainTitle");
+    const btnTitle = document.getElementById("btnChangeTitle");
 
+    btnTitle.addEventListener("click", () => {
+        title.innerText = prompt("Escribe el nuevo título:");
+    });
+}
 
 
 document.addEventListener("DOMContentLoaded", circulo);
@@ -97,3 +104,5 @@ document.addEventListener("DOMContentLoaded", moverArriba);
 document.addEventListener("DOMContentLoaded", moverAbajo);
 document.addEventListener("DOMContentLoaded", moverIzquierda);
 document.addEventListener("DOMContentLoaded", moverDerecha);
+document.addEventListener("DOMContentLoaded", cambiarTitulo);
+
