@@ -94,7 +94,11 @@ function cambiarTitulo() {
         title.innerText = prompt("Escribe el nuevo título:");
     });
 }
-
+function cambiarParrafo() {
+    document.getElementById("btnChangeParagraph").addEventListener("click", () => {
+        document.getElementById("mainParagraph").innerText = prompt("Escribe el nuevo párrafo:");
+    });
+}
 
 document.addEventListener("DOMContentLoaded", circulo);
 document.addEventListener("DOMContentLoaded", estrella);
@@ -105,4 +109,5 @@ document.addEventListener("DOMContentLoaded", moverAbajo);
 document.addEventListener("DOMContentLoaded", moverIzquierda);
 document.addEventListener("DOMContentLoaded", moverDerecha);
 document.addEventListener("DOMContentLoaded", cambiarTitulo);
+document.addEventListener("DOMContentLoaded", cambiarParrafo);
 
