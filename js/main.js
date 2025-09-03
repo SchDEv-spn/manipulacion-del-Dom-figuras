@@ -21,7 +21,15 @@ function estrella() {
     });
 }
 
+function gif() {
+    const figure = document.getElementById("figure");
+    const btnGif = document.getElementById("btnGif");
 
+    btnGif.addEventListener("click", () => {
+        figure.style.backgroundImage = "url('img/gif.gif')";
+        figure.style.backgroundSize = "cover";
+    });
+}
 
 
 
@@ -31,3 +39,4 @@ function estrella() {
 
 document.addEventListener("DOMContentLoaded", circulo);
 document.addEventListener("DOMContentLoaded", estrella);
+document.addEventListener("DOMContentLoaded", gif);
