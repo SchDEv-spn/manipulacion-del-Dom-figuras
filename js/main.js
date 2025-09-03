@@ -53,8 +53,17 @@ function moverArriba() {
         figure.style.transform = `translateY(${posY}px)`;
     });
 }
+function moverAbajo() {
+    const figure = document.getElementById("figure");
+    const btnDown = document.getElementById("btnMoveDown");
 
+    let posY = 0; // posición inicial
 
+    btnDown.addEventListener("click", () => {
+        posY += 20; // bajar 20px
+        figure.style.transform = `translateY(${posY}px)`;
+    });
+}
 
 
 
@@ -64,3 +73,4 @@ document.addEventListener("DOMContentLoaded", estrella);
 document.addEventListener("DOMContentLoaded", gif);
 document.addEventListener("DOMContentLoaded", animacion);
 document.addEventListener("DOMContentLoaded", moverArriba);
+document.addEventListener("DOMContentLoaded", moverAbajo);
