@@ -42,6 +42,17 @@ function animacion() {
         }
     });
 }
+function moverArriba() {
+    const figure = document.getElementById("figure");
+    const btnUp = document.getElementById("btnMoveUp");
+
+    let posY = 0; 
+
+    btnUp.addEventListener("click", () => {
+        posY -= 20; 
+        figure.style.transform = `translateY(${posY}px)`;
+    });
+}
 
 
 
@@ -52,3 +63,4 @@ document.addEventListener("DOMContentLoaded", circulo);
 document.addEventListener("DOMContentLoaded", estrella);
 document.addEventListener("DOMContentLoaded", gif);
 document.addEventListener("DOMContentLoaded", animacion);
+document.addEventListener("DOMContentLoaded", moverArriba);
