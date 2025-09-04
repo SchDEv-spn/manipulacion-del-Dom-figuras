@@ -100,3 +100,14 @@ img{
     margin-top: 20px;
     display: block;
 }
+#figure{
+  width: 150px;
+  height: 150px;
+  background: red;
+  position: relative;
+}
+@keyframes mover {
+  from { left:0; background:red; }
+  to { left:100px; background:blue; 
+  }
+}

@@ -1,10 +1,11 @@
 function circulo() {
     document.getElementById('figure').style.borderRadius = "50%";
+    figure.style.background = "green"
 }
 
 
 function estrella() {
-    document.getElementById('figure').style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
+    document.getElementById('figure').style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"; 
 }
 function gif() {
     const figure = document.getElementById("figure");
@@ -16,25 +17,18 @@ function gif() {
     });
 }
 function animacion() {
-    const figure = document.getElementById("figure");
-    const btnAnim = document.getElementById("btnAnim");
-
-    btnAnim.addEventListener("click", () => {
-        if (figure.style.transform === "rotate(360deg)") {
-            figure.style.transform = "rotate(0deg)";
-        } else {
-            figure.style.transform = "rotate(360deg)";
-        }
-    });
+    const figura = document.getElementById('figure')
+    figura.style.animation = "mover 2s infinite alternate linear";
+    figura.style.background = "blue";
 }
 function moverArriba() {
     const figure = document.getElementById("figure");
     const btnUp = document.getElementById("btnMoveUp");
 
-    let posY = 0; 
+    let posY = 0;
 
     btnUp.addEventListener("click", () => {
-        posY -= 20; 
+        posY -= 20;
         figure.style.transform = `translateY(${posY}px)`;
     });
 }
@@ -42,34 +36,18 @@ function moverAbajo() {
     const figure = document.getElementById("figure");
     const btnDown = document.getElementById("btnMoveDown");
 
-    let posY = 0; 
+    let posY = 0;
 
     btnDown.addEventListener("click", () => {
-        posY += 20; 
+        posY += 20;
         figure.style.transform = `translateY(${posY}px)`;
     });
 }
 function moverIzquierda() {
-    const figure = document.getElementById("figure");
-    const btnLeft = document.getElementById("btnMoveLeft");
-
-    let posX = 0; 
-
-    btnLeft.addEventListener("click", () => {
-        posX -= 20; 
-        figure.style.transform = `translateX(${posX}px)`;
-    });
+    document.getElementById('figure').style.transform = "translateX(-50px)";
 }
 function moverDerecha() {
-    const figure = document.getElementById("figure");
-    const btnRight = document.getElementById("btnMoveRight");
-
-    let posX = 0;
-
-    btnRight.addEventListener("click", () => {
-        posX += 20; 
-        figure.style.transform = `translateX(${posX}px)`;
-    });
+    document.getElementById('figure').style.transform = "translateX(50px)";
 }
 function cambiarTitulo() {
     const title = document.getElementById("mainTitle");
@@ -89,7 +67,7 @@ function agregarParrafo() {
         document.getElementById("extraParagraphs").innerHTML += `<p>${prompt("Escribe el nuevo párrafo:")}</p>`;
     });
 }
-function deleteParrafo(){
+function deleteParrafo() {
     const parrafox = document.getElementById('extraParagraphs');
     parrafox.remove();
 }
@@ -99,9 +77,9 @@ function hexColor() {
 function elegirFigura() {
     const opcion = prompt("Elige una figura:\n1: Cuadrado\n2: Estrella\n3: Círculo");
 
-    switch(opcion) {
+    switch (opcion) {
         case "1": // cuadrado
-          const figura =document.getElementById('figure')
+            const figura = document.getElementById('figure')
             figura.style.clipPath = "none";
             figura.style.borderRadius = "0";
             figura.style.background = "green";
@@ -140,16 +118,24 @@ function cambiarLink() {
     document.getElementById('mainLink').href = prompt("Nueva URL:");
 }
 function abrirLink() {
-    window.open(document.getElementById('mainLink').href, "_blank");
+    window.open("https://github.com/SchDEv-spn", "_blank");
+    const enlace = document.getElementById('mainLink');
+    enlace.href = "https://github.com/SchDEv-spn";
+    enlace.textContent = "Visitar mi GitHub";
+    enlace.target = "_blank";
+}
+function deshabilitarLink() {
+    let link = document.getElementById('mainLink');
+    link.removeAttribute("href");
 }
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.addEventListener("DOMContentLoaded", gif);
-document.addEventListener("DOMContentLoaded", animacion);
+document.getElementById("btnAnim").addEventListener("click", animacion);
 document.addEventListener("DOMContentLoaded", moverArriba);
 document.addEventListener("DOMContentLoaded", moverAbajo);
-document.addEventListener("DOMContentLoaded", moverIzquierda);
-document.addEventListener("DOMContentLoaded", moverDerecha);
+document.getElementById('btnMoveLeft').addEventListener('click', moverIzquierda);
+document.getElementById('btnMoveRight').addEventListener('click', moverDerecha);
 document.addEventListener("DOMContentLoaded", cambiarTitulo);
 document.addEventListener("DOMContentLoaded", cambiarParrafo);
 document.addEventListener("DOMContentLoaded", agregarParrafo);
@@ -162,3 +148,4 @@ document.getElementById('btnToggleImage').addEventListener('click', mostOcul);
 document.getElementById('btnChangeAlt').addEventListener('click', cambiarAlt);
 document.getElementById('btnChangeLink').addEventListener('click', cambiarLink);
 document.getElementById('btnOpenLink').addEventListener('click', abrirLink);
+document.getElementById('btnDisableLink').addEventListener('click', deshabilitarLink);
