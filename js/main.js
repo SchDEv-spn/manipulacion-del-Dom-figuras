@@ -1,26 +1,11 @@
 function circulo() {
-    const figure = document.getElementById("figure");
-    const btnCircle = document.getElementById("btnCircle");
-
-    btnCircle.addEventListener("click", () => {
-        figure.style.borderRadius = "50%";
-        figure.style.background = "green";
-        
-    });
+    document.getElementById('figure').style.borderRadius = "50%";
 }
+
 
 function estrella() {
-    const figure = document.getElementById("figure");
-    const btnStar = document.getElementById("btnStar");
-
-    btnStar.addEventListener("click", () => {
-        figure.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, " +
-                                "79% 91%, 50% 70%, 21% 91%, 32% 57%, " +
-                                "2% 35%, 39% 35%)";
-        figure.style.background = "green";
-    });
+    document.getElementById('figure').style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
 }
-
 function gif() {
     const figure = document.getElementById("figure");
     const btnGif = document.getElementById("btnGif");
@@ -99,9 +84,45 @@ function cambiarParrafo() {
         document.getElementById("mainParagraph").innerText = prompt("Escribe el nuevo párrafo:");
     });
 }
+function agregarParrafo() {
+    document.getElementById("btnAddParagraph").addEventListener("click", () => {
+        document.getElementById("extraParagraphs").innerHTML += `<p>${prompt("Escribe el nuevo párrafo:")}</p>`;
+    });
+}
+function deleteParrafo(){
+    const parrafox = document.getElementById('extraParagraphs');
+    parrafox.remove();
+}
+function hexColor() {
+    document.getElementById('figure').style.backgroundColor = prompt("Color HEX:");
+}
+function elegirFigura() {
+    const opcion = prompt("Elige una figura:\n1: Cuadrado\n2: Estrella\n3: Círculo");
 
-document.addEventListener("DOMContentLoaded", circulo);
-document.addEventListener("DOMContentLoaded", estrella);
+    switch(opcion) {
+        case "1": // cuadrado
+          const figura =document.getElementById('figure')
+            figura.style.clipPath = "none";
+            figura.style.borderRadius = "0";
+            figura.style.background = "green";
+            break;
+
+        case "2": // estrella
+            estrella();
+            break;
+
+        case "3": // circulo
+            circulo();
+            break;
+
+        default:
+            alert("Opción no válida");
+    }
+}
+
+
+document.getElementById('btnCircle').addEventListener('click', circulo);
+document.getElementById('btnStar').addEventListener('click', estrella);
 document.addEventListener("DOMContentLoaded", gif);
 document.addEventListener("DOMContentLoaded", animacion);
 document.addEventListener("DOMContentLoaded", moverArriba);
@@ -110,4 +131,8 @@ document.addEventListener("DOMContentLoaded", moverIzquierda);
 document.addEventListener("DOMContentLoaded", moverDerecha);
 document.addEventListener("DOMContentLoaded", cambiarTitulo);
 document.addEventListener("DOMContentLoaded", cambiarParrafo);
+document.addEventListener("DOMContentLoaded", agregarParrafo);
+document.getElementById('btnRemoveParagraph').addEventListener('click', deleteParrafo);
+document.getElementById('btnHexColor').addEventListener('click', hexColor);
+document.getElementById('btnChooseFigure').addEventListener('click', elegirFigura);
 
