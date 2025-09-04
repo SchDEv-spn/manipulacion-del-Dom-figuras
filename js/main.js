@@ -22,26 +22,10 @@ function animacion() {
     figura.style.background = "blue";
 }
 function moverArriba() {
-    const figure = document.getElementById("figure");
-    const btnUp = document.getElementById("btnMoveUp");
-
-    let posY = 0;
-
-    btnUp.addEventListener("click", () => {
-        posY -= 20;
-        figure.style.transform = `translateY(${posY}px)`;
-    });
+    document.getElementById('figure').style.transform = "translateY(-50px)";
 }
 function moverAbajo() {
-    const figure = document.getElementById("figure");
-    const btnDown = document.getElementById("btnMoveDown");
-
-    let posY = 0;
-
-    btnDown.addEventListener("click", () => {
-        posY += 20;
-        figure.style.transform = `translateY(${posY}px)`;
-    });
+    document.getElementById('figure').style.transform = "translateY(50px)";
 }
 function moverIzquierda() {
     document.getElementById('figure').style.transform = "translateX(-50px)";
@@ -132,8 +116,8 @@ document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.addEventListener("DOMContentLoaded", gif);
 document.getElementById("btnAnim").addEventListener("click", animacion);
-document.addEventListener("DOMContentLoaded", moverArriba);
-document.addEventListener("DOMContentLoaded", moverAbajo);
+document.getElementById('btnMoveUp').addEventListener('click', moverArriba);
+document.getElementById('btnMoveDown').addEventListener('click', moverAbajo);
 document.getElementById('btnMoveLeft').addEventListener('click', moverIzquierda);
 document.getElementById('btnMoveRight').addEventListener('click', moverDerecha);
 document.addEventListener("DOMContentLoaded", cambiarTitulo);
