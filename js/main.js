@@ -129,6 +129,16 @@ function cambiarAtras() {
     imgIndex = (imgIndex - 1 + imgs.length) % imgs.length;
     document.getElementById('mainImage').src = imgs[imgIndex];
 }
+function mostOcul() {
+    let img = document.getElementById('mainImage');
+    img.style.display = img.style.display === "none" ? "block" : "none";
+}
+function cambiarAlt() {
+    document.getElementById('mainImage').alt = prompt("Nuevo ALT:");
+}
+function cambiarLink() {
+    document.getElementById('mainLink').href = prompt("Nueva URL:");
+}
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.addEventListener("DOMContentLoaded", gif);
@@ -145,4 +155,6 @@ document.getElementById('btnHexColor').addEventListener('click', hexColor);
 document.getElementById('btnChooseFigure').addEventListener('click', elegirFigura);
 document.getElementById('btnChangeImageNext').addEventListener('click', cambiarImagen);
 document.getElementById('btnChangeImagePrev').addEventListener('click', cambiarAtras);
-
+document.getElementById('btnToggleImage').addEventListener('click', mostOcul);
+document.getElementById('btnChangeAlt').addEventListener('click', cambiarAlt);
+document.getElementById('btnChangeLink').addEventListener('click', cambiarLink);
