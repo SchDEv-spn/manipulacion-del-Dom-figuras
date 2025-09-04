@@ -119,8 +119,16 @@ function elegirFigura() {
             alert("Opción no válida");
     }
 }
-
-
+let imgIndex = 0;
+const imgs = ["img/imagen.jpg", "img/imagen2.jpg", "img/imagen3.jpg"];
+function cambiarImagen() {
+    imgIndex = (imgIndex + 1) % imgs.length;
+    document.getElementById('mainImage').src = imgs[imgIndex];
+}
+function cambiarAtras() {
+    imgIndex = (imgIndex - 1 + imgs.length) % imgs.length;
+    document.getElementById('mainImage').src = imgs[imgIndex];
+}
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.addEventListener("DOMContentLoaded", gif);
@@ -135,4 +143,6 @@ document.addEventListener("DOMContentLoaded", agregarParrafo);
 document.getElementById('btnRemoveParagraph').addEventListener('click', deleteParrafo);
 document.getElementById('btnHexColor').addEventListener('click', hexColor);
 document.getElementById('btnChooseFigure').addEventListener('click', elegirFigura);
+document.getElementById('btnChangeImageNext').addEventListener('click', cambiarImagen);
+document.getElementById('btnChangeImagePrev').addEventListener('click', cambiarAtras);
 
