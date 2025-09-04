@@ -139,6 +139,9 @@ function cambiarAlt() {
 function cambiarLink() {
     document.getElementById('mainLink').href = prompt("Nueva URL:");
 }
+function abrirLink() {
+    window.open(document.getElementById('mainLink').href, "_blank");
+}
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.addEventListener("DOMContentLoaded", gif);
@@ -158,3 +161,4 @@ document.getElementById('btnChangeImagePrev').addEventListener('click', cambiarA
 document.getElementById('btnToggleImage').addEventListener('click', mostOcul);
 document.getElementById('btnChangeAlt').addEventListener('click', cambiarAlt);
 document.getElementById('btnChangeLink').addEventListener('click', cambiarLink);
+document.getElementById('btnOpenLink').addEventListener('click', abrirLink);
